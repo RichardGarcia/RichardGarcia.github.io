@@ -86,3 +86,52 @@ footer p {
 .clearfix {
     display: inline-block;
 }
+
+/* border */
+
+p.borderBlog {
+	border-width: 3px;
+	border-color: red;
+	margin-bottom: 10px;
+	font-size: 14px;
+	padding: 3px;
+}
+p.none {
+	border-style: none;
+}
+
+p.dotted {
+	border-style: dotted;
+}
+
+p.dashed {
+	border-style: dashed;
+}
+
+p.solid {
+	border-style: solid;
+}
+
+p.double {
+	border-style: double;
+}
+
+p.groove {
+	border-style: groove;
+}
+
+p.ridge {
+	border-style: ridge;
+}
+
+p.inset {
+	border-style: inset;
+}
+
+p.outset {
+	border-style: outset;
+}
+
+p.hidden {
+	border-style: hidden;
+}
