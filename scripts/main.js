@@ -4,4 +4,5 @@
 var button = $('<button/>').html('click me').on('click', function() {
     alert('test');
 });
+
 $('.bowerTesting').append(button);
