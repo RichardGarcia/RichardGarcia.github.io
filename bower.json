@@ -1,0 +1,27 @@
+{
+  "name": "richardgarcia.github.io",
+  "description": "webDev doodling..",
+  "main": "index.html",
+  "authors": [
+    "Richard Garcia"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/RichardGarcia/RichardGarcia.github.io",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
+  "private": true
+}

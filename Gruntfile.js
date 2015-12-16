@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
 
+    grunt.initConfig ({
+        pkg: grunt.file.readJSON ('package.json')
+    });
+
     // grunt test only...
     grunt.registerTask ('speak', function() {
         console.log("I'm speaking");

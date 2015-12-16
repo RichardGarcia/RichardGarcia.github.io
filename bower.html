@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bower Config</title>
+</head>
+<body>
+    <p>
+        myBower config<br/>
+        based from this tutorial <a href="https://www.youtube.com/watch?v=Vs2wduoN9Ws">www.youtube.com/watch?v=Vs2wduoN9Ws</a>
+    </p>
+    <pre>
+    1. Node.js required.. :)
+    2. Install Bower
+
+            npm install -g bower
+
+    3. Installing Packages...
+
+            bower install &lt;package&gt;
+            or bower install &lt;package&gt;#&lt;version&gt;
+
+            "bower install jquery -S"   // capital S
+            or "bower install jquery#1.9.1 -S" // if you need a specific version
+
+            bower jquery#*                cached git://github.com/jquery/jquery.git#2.1.4
+            bower jquery#*                validate 2.1.4 against git://github.com/jquery/jquery.git#*
+            bower jquery#~2.1.4           install jquery#2.1.4
+
+
+            // folders are added:
+
+                bower_components
+                └── jquery             // more files inside the folder
+
+            a. try "bower list"
+
+            richardgarcia.github.io /Users/richardgarcia/~rgarcia/~folio/RichardGarcia.github.io
+            └── jquery#2.1.4 (latest is 3.0.0-alpha1+compat)
+
+            b. try "bower list --paths"
+
+                jquery: 'bower_components/jquery/dist/jquery.js'
+
+                // you can use the jquery path
+                // "src="bower_components/jquery/dist/jquery.js"
+
+
+    4. To create bower.json
+
+        a. bower init
+            // some questions will be ask to generate bower.json file... :)
+
+            name: project-name
+            version: 1.0.0
+            description: description
+            main file: index.html
+            what types of modules does this package expose?: // empty
+            keywords: // empty
+            authors: yourName
+            license: MIT
+            homepage: //leave empty
+            set currently installed components as dependencies?: Yes
+            add commonly ignored files to ignore list?: Yes
+            would you like to mark this package as private which prevents it from being accidentally published to the registry?: Yes
+
+    5. more to come... :)
+
+
+note(s)
+    1. https://github.com/bower/spec/blob/master/json.md
+    2. "Bad idea" is a bit harsh... there are definitely use cases for committing dependencies into the repository.
+    - Addy Osmani has a great article on the pros and cons.
+
+    </pre>
+</body>
+</html>
