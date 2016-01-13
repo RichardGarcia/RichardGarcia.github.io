@@ -1,9 +1,14 @@
 // variables
-$main-color: yellow;
+$whiteColor: white;
+$lightgrayColor: lightgray;
 $padding15: 15px;
 
+body {
+    background: $lightgrayColor;
+}
 
 // nested
+// nested sample 01
 ul {
     background: green;
     li {
@@ -11,12 +16,24 @@ ul {
     }
 }
 
-body {
-    height: 150px;
-    width: 150px;
-    background: $main-color;
-}
+// nested sample 02
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
 
 // mixin
 // radius with default 5px radius, you can overwrite the (5px) value..

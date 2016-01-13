@@ -1,3 +1,7 @@
+body {
+  background: lightgray;
+}
+
 ul {
   background: green;
 }
@@ -5,10 +9,18 @@ ul li {
   display: inline;
 }
 
-body {
-  height: 150px;
-  width: 150px;
-  background: #fff;
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
 }
 
 .box01 {
