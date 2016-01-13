@@ -1,0 +1,59 @@
+// variables
+$main-color: yellow;
+$padding15: 15px;
+
+
+// nested
+ul {
+    background: green;
+    li {
+        display: inline;
+    }
+}
+
+body {
+    height: 150px;
+    width: 150px;
+    background: $main-color;
+}
+
+
+// mixin
+// radius with default 5px radius, you can overwrite the (5px) value..
+@mixin rounded ($radius:5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius
+}
+
+// to use
+.box01 {
+    // use 5px default..
+    @include rounded;
+}
+
+.box02 {
+    //overwrite 5px with 10px..
+    @include rounded(10px);
+}
+
+
+//selector inheritance
+// main rounded box...
+.roundedBoxMain {
+    @include rounded(10px);
+    width: 120px;
+    height: 120px;
+}
+
+    // use the main box elements then added other stuff...
+    .roundedBox01 {
+        @extend .roundedBoxMain;
+        background-color: red;
+    }
+
+    // use the main box elements then added other stuff...
+    .roundedBox02 {
+        @extend .roundedBoxMain;
+        background-color: green;
+    }

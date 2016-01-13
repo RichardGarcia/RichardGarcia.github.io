@@ -1,0 +1,42 @@
+ul {
+  background: green;
+}
+ul li {
+  display: inline;
+}
+
+body {
+  height: 150px;
+  width: 150px;
+  background: #fff;
+}
+
+.box01 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.box02 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.roundedBoxMain, .roundedBox01, .roundedBox02 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.roundedBox01 {
+  background-color: red;
+}
+
+.roundedBox02 {
+  background-color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
