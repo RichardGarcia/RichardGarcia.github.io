@@ -1,0 +1,335 @@
+<p>RoR, uDemy notes:</p>
+
+<ul>
+
+    <li>
+        <p>Using Atom IDE<p>
+        <p>check nitrous.io...</p>
+        <p>check c9.io...</p>
+        <p>get familiar command line...</p>
+        <p>more oop please..</p>
+    </li>
+
+    <li>
+        <p>Create new rails project with postgresql database</p>
+        <p>// default database is sqlite3</p>
+        <p>// you can also dbase config in config/database.yml</p>
+
+            $ rails new projectname postgresql
+    </li>
+
+    <li>
+        <p>Run Rails server</p>
+        <p>rails s -b 0.0.0.0</p>
+
+    </li>
+    <li>
+        <p>
+            // delete app..<br/>
+            # from app directory
+            rake db:drop<br/>
+            cd ..<br/>
+            rm -rf <app_directory_name><br/>
+        </p>
+    </li>
+</ul>
+
+<p>links:</p>
+<ul>
+    <li>https://www.udemy.com/the-complete-ruby-on-rails-developer-course/learn/</li>
+    <li>intallrails.com</li>
+    <li>https://github.com/rbenv/rbenv</li>
+    <li>http://brew.sh/</li>
+    <li>https://github.com/creationix/nvm</li>
+    <li>http://cli.learncodethehardway.org/book/</li>
+    <li>https://www.koding.com/</li>
+    <li>gitref.org</li>
+</ul>
+
+
+
+<!--
+
+read rors.org site - few hrs / get familiar
+
+
+Rails overview:
+guides.rubyonrails.org
+rubyonrails.org
+weblog.rubyonrails.org
+
+Creator of Rails: David Heinemeier Hansson
+david.heinemeierhansson.com
+
+Ruby meetups:
+ruby.meetup.com
+
+Code repository:
+github.com
+
+Devise gem code repository:
+github.com/plataformatec/devise
+
+Gems for ruby and ruby on rails:
+rubygems.org
+
+Bootstrap gem code repository:
+github.com/twbs/bootstrap-sass
+-->
+
+
+
+<!--
+ROR
+
+check routes - rake routes
+
+add a page
+1.  http://localhost:3000/welcome/home
+
+    // No route matches [GET] "/welcome/home"
+
+    config/routes.rb
+
+    // route - welcome/home
+    // controller & action - welcome & home
+    get 'welcome/home', to: 'welcome#home'
+
+    check - rake routes
+
+    Prefix         - Verb   - URI Pattern              - Controller#Action
+    welcome_home   - GET    - /welcome/home(.:format)  - welcome#home
+
+    // uninitialized constant WelcomeController
+    add welcome_controller.rb in controllers folder
+
+        class WelcomeController < ApplicationController
+
+        end
+
+    // Unknown action
+    The action 'home' could not be found for WelcomeController
+
+        // add this method
+        def home
+
+        end
+
+    // Template is missing
+
+        new welcome folder in  views folder
+        new home.html.erb (file) in welcome folder
+
+    // Links
+
+        <%= link_to 'home', welcome_home_path %> or
+        <%= link_to 'about', welcome_about_path %> or
+
+        <%= link_to 'home', root_path %>
+        <%= link_to 'about', about_path %>
+
+    // Root page
+
+
+-->
+
+
+<!--
+Lesson 48 solution to homework
+
+
+
+Step 1: Ensure you are in the code/rails_projects directory and not in an existing rails application directory like code/rails_projects/test_app
+
+Step 2: Create a new rails application using the command ->
+
+rails new alpha-blog
+
+Step 3: Change directory into the new application using ->
+
+cd alpha-blog
+
+Step 4: Run the rails server using the command ->
+
+rails s -b 0.0.0.0
+
+Step 5: Preview the application and ensure the Rails welcome page shows up by clicking on preview and then Port 3000 (Default) on the top menu of your nitrous IDE
+
+Step 6: Append a /pages/home to the URL and you'll receive a routing error
+
+Step 7: Go to config/routes.rb file and add the following two routes ->
+
+get 'pages/home', to: 'pages#home'
+
+get 'pages/about', to: 'pages#about'
+
+Step 8: Now if you reload the page after saving the routes file you'll receive uninitialized constant pages controller error
+
+Step 9: Under app/controllers create a pages_controller.rb file by right clicking on controllers folder and selecting the 'New File' option
+
+Step 10: Fill in the pages_controller.rb file with the following code:
+
+class PagesController < ApplicationController
+
+def home
+
+end
+
+def about
+
+end
+
+end
+
+Step 11: Now if you reload any of the pages you'll get a missing template error, so create a folder under views called pages (right click on the views folder and select 'New Folder')
+
+Step 12: Under pages folder, create two files named home.html.erb and about.html.erb
+
+Step 13: Fill in these two files with HTML code
+
+Step 14: To upload an image to your app that you want to reference in your code, go to app/assets/images and right click on images, then select the upload files to images option. Select the image you want to upload. Once uploaded check the images folder and note the name of your file (for example profileimage.png). Then to show this image in your HTML page and to link it to another page, put in the following code (this is if the file you're referencing is profileimage.png) ->
+
+<%= link_to image_tag('profileimage.png'), 'www.mashrurhossain.com' %>
+
+The image tag is for the image, and the link_to turns the image to a link and then you provide the link you want it to go to after the comma
+
+If you simply want to display an image without a link, put in the following code ->
+
+<%= image_tag 'profileimage.png' %>
+
+Step 15: Now if you go to either the pages/home or pages/about link (appended to your nitrous preview page URL) you will get the home and/or about pages
+
+Step 16: Enter in the path to the about page in the home.html.erb and the homepage in the about.html.erb pages as below ->
+
+In the home.html.erb page
+
+<%= link_to 'About', pages_about_path %>
+
+In the about.html.erb page
+
+<%= link_to 'Home', pages_home_path %>
+
+Ensure you have the appropriate links by checking with rake routes
+
+Step 17: Click the links in the refreshed browser pages to ensure they work
+
+Good luck!
+
+-->
+
+
+********************************************************
+
+L58 - Models, Migrations, Rails Console
+
+// naming convention - Article Table
+
+- Model name: Article, class: Article -> Capitalized A and singular
+- File name: article.rb -> singular and all lowercase
+- Controller file name: articles_controller.rb, class: ArticlesController -> camel case class name, snake case file name both plural
+- Views folder: articles
+- Table name: articles -> plural of model
+- Model name: User, class: User -> Capitalized U and singular
+- File name: user.rb -> singular and all lowercase
+- Controller file name: users_controller.rb, class: UsersController -> camel case class name, snake case file name both plural
+
+// galing sa image..
+- model name - singular, first letter UPPERCASE -> article
+- table name - plural, LOWERCASE of model name -> articles
+- model name (file name) - singular, all LOWERCASE -> article.rb
+- controller name - plural of model, with "_controller" -> articles_controller.rb
+
+// To generate a migration to create a table (in this example articles):
+
+    "$ rails generate migration create_articles"
+
+// To add attributes for the table in the migration file
+
+// option 1:
+    t.string :title
+    t.text :description
+
+//option 2:
+
+    "rails generate migration add_created_at_to_articles"
+
+    // Then within the def change method in the migration file
+    // remember to add all 3 elements - table name, attribute name and attribute type
+    // keywords - created_at and updated_at
+
+      add_column :articles, :description, :text
+      add_column :articles, :created_at, :datetime
+      add_column :articles, :updated_at, :datetime
+
+then
+// To run the migration file and create the articles table:
+
+    "rake db:migrate"
+
+then
+    create the model file (app/model/article.rb)
+
+then add this:
+
+        class Artile < ActiveRecord::Base
+        end
+
+
+
+********************
+
+rails console
+
+
+// To start the rails console:
+
+    rails console
+
+// To test connection to the articles table:
+
+    Article.all # classname.all will list all the articles in the articles table
+
+// Then simply type in
+
+    Article (classname) to view the attributes
+
+// To create a new article with attributes title and description:
+
+    $ article = Article.new(title: "This is a test title", description: "This is a test description")
+    $ article.save
+
+OR
+
+    $ article = Article.new
+    $ article.title = "This is a test title"
+    $ article.description = "This is a test description"
+    $ article.save
+
+OR
+
+    article = Article.new(title: "This is a test title", description: "This is a test description")
+    article.save
+
+// Another method to do the same:
+
+    $ Article.create(title: "This is a test title", description: "This is a test description") # This will hit the table right away without needing the article.save line
+
+
+// edit & destroy
+    a = Article.new
+    a.find(1)
+    a.title =  "this is edited"
+    a.save
+
+    // destroy
+    a.destroy
+
+// to find errors
+// To find errors in article object while saving (if it's rolled back):
+
+    article.errors.any?
+    article.errors.full_messages
+
+
+
+
