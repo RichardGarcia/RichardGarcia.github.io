@@ -233,7 +233,7 @@ L58 - Models, Migrations, Rails Console
 - File name: user.rb -> singular and all lowercase
 - Controller file name: users_controller.rb, class: UsersController -> camel case class name, snake case file name both plural
 
-// galing sa image..
+// from image (udemy)..
 - model name - singular, first letter UPPERCASE -> article
 - table name - plural, LOWERCASE of model name -> articles
 - model name (file name) - singular, all LOWERCASE -> article.rb
@@ -329,6 +329,124 @@ OR
 
     article.errors.any?
     article.errors.full_messages
+
+
+
+section 2 final project -- JSON ???
+
+
+========
+30mar2016
+tagLish Notes.. :)
+
+rails output format - puts Article.all.map(&:attributes).to_yaml
+
+
+- added temp_app -- playground for ROR..
+  always do rake routes
+
+- crud workflow.. rails/rails console
+
+  - new project - rails new project_name
+    go to project folder and run rails s / rails server
+
+    make new page..
+      http://localhost:3000/welcome/testingpage01
+        welcome - controller
+        testingpage01 - action/method
+
+        - error - No route matches [GET] "/welcome/testingpage01"
+
+          in route.rb add this --> get 'welcome/testingpage01', to: 'welcome#testingpage01'
+
+        - create new file welcome_controller.rb then add..
+
+            class WelcomeController < ApplicationController
+              def testingpage01
+
+              end
+            end
+
+          // "< ApplicationController" <-- extends from...
+
+        - Template is missing
+          create folder "welcome" in "views" folder
+          create "testingpage01.html.erb"
+
+
+------------------
+
+- Rails Scaffold
+
+  rails g scaffold Article title:string description: text
+  // rails generate scaffold "name of the scaffold" "database attributes"
+
+
+------------------
+
+- check more notes @ RoR Udemy Course.. :)
+
+  how to edit in Rails Console :)
+  how to delete in Rails Console :)
+
+ ------------------
+
+- adding validation in model..
+
+    validates :title, presence: true, length: {minimum: 3, maximum: 50}
+    validates :description, presence: true, length: {minimum: 10, maximum: 300}
+
+- to get error message(s) in console --> article.errors.any?
+                                     --> article.errors.full_messages
+
+ ------------------
+ - debugger stuff
+
+    <%= debug(params) if Rails.env.development? %>
+    check eyebug!
+
+------------------
+
+dbase - manipulation in rails c
+
+  - puts Article.all.map(&:attributes).to_yaml
+  - Article.all
+  - Article.last
+  - Article.first
+  - Article.find(1)
+  - a = Article.new()
+      a.save
+      a.erros.full_messages
+      a[:title]
+      a.title
+      a[:description]
+      a.description
+      a.create()
+      etc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
