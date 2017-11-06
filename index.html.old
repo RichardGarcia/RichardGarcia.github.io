@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title>old codeDoodling...</title>
+	</head>
+	<body>
+		<h2>Welcome to RichardGarcia.github.io!</h2>
+		<h2>rGarcia - code doodling...</h2>
+
+		<p><strong>Rails</strong></p>
+		<p>
+			- <a href="https://alpha-blog-rgarcia.herokuapp.com/" target="_blank">Alpha blog</a><br>
+			<small>Basic Ruby on Rails CRUD project, Bootstrap, Heroku</small>
+		</p>
+		<!-- <p>- <a href="rails/rornotes.html" target="_blank">RoR</a></p> -->
+
+		<p><strong>Misc...</strong></p>
+		<p>- <a href="sasstut/tutplussass/sass01.html" target="_blank">Sass</a></p>
+		<p>- <a href="bower.html" target="_blank">Bower</a></p>
+			<!-- <span>Bower / jQuery testing... </span>
+			<span class="bowerTesting"></span> -->
+		<p>- <a href="grunt.html" target="_blank">Grunt</a></p>
+		<p>- <a href="edaphasezero/index.html" target="_blank">EDA's Phase 0 stuff...</a><p>
+
+		<p>you can also check codes @ <a target="_blank" href="https://github.com/RichardGarcia/RichardGarcia.github.io">RichardGarcia.github.io</a></p>
+
+		<script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+		<script src="scripts/main.js" charset="utf-8"></script>
+	</body>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-64083081-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</html>

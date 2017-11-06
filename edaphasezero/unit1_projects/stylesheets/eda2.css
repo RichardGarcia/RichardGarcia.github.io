@@ -1,0 +1,88 @@
+
+/* reset */
+article,
+aside, 
+footer,
+header, 
+section,
+figure {
+	display: block;
+}
+
+figure {
+	padding: 0;
+	margin: 0 20px 0 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 970px;
+	margin: 0 auto;
+	font-family: "Trebuchet MS", Helvetica, sans-serif, Arial;
+}
+
+header {
+	margin: 10px auto;
+	height: 175px;
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+section {
+	border: 1px solid #000;
+	width: 70%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+aside {
+	width: 25%;	
+}
+
+aside ul {
+	padding: 0;
+	margin: 0 0 0 20px;
+}
+aside li {
+	font-size: 12px;
+	font-weight: bold;;
+	margin-bottom: 10px;
+}
+
+footer {
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+footer p {
+	font-size: 12px;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+/* misc */
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.clearFloat {
+	clear: both;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}

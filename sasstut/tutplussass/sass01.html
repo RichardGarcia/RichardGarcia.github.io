@@ -1,0 +1,144 @@
+ <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tuts+ Mastering Sass</title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <h4>from this tut...</h4>
+    <p><a href="https://code.tutsplus.com/series/mastering-sass--net-19077" target="_blank">https://code.tutsplus.com/series/mastering-sass--net-19077</a></p>
+
+    <p>My basic installation process...</p>
+    <pre>
+        1. install ruby..
+        2. gem install haml - ???
+        3. try sass -h
+    </pre>
+
+    <p>testing...</p>
+    <pre>
+        1. touch style.scss
+        2. add..
+            body {
+                height: 200px;
+                width: 200px;
+                background: #fff;
+            }
+
+        3. setup "watch file"
+            a. sass --watch style.scss
+            b. >>> Sass is watching for changes. Press Ctrl-C to stop.
+            c. code... code... code... code... save..
+            d. >>> Change detected to: style.scss
+                  write style.css
+                  write style.css.map
+
+        4. sass --style compressed  style.scss:style.css
+
+            // from:
+
+                // Sass variable..
+                $main-color: green;
+
+                // Sass nesting..
+                ul {
+                    background: red;
+                    li {
+                        display: inline;
+                    }
+                }
+
+                body {
+                    height: 200px;
+                    width: 200px;
+                    background: $main-color;
+                }
+
+            // to:
+            // style used -- compressed
+
+                ul{background:red}ul li{display:inline}body{height:200px;width:200px;background:green}
+
+
+
+        5. Sass
+
+        5.1. Sass variable
+            $main-color: green;
+
+            // calling variables
+            body {
+                height: 200px;
+                width: 200px;
+                background: $main-color;
+            }
+
+        5.2. Sass nesting
+
+            // nested sample 01
+            ul {
+                background: green;
+                li {
+                    display: inline;
+                }
+            }
+
+            // nested sample 02
+            nav {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                li {
+                    display: inline-block;
+                }
+
+                a {
+                    display: block;
+                    padding: 6px 12px;
+                    text-decoration: none;
+                }
+            }
+
+        5.3. Sass Mixin
+
+            // radius with default 5px radius, you can overwrite the (5px) value..
+            @mixin rounded (radius : 5px) {
+                -webkit-border-radius: $radius;
+                -moz-border-radius: $radius;
+                border-radius: $radius
+            }
+
+                // to use
+                .box {
+                    // overwrite 5px with 10px..
+                    @include rounded (10px);
+                }
+
+        5.4. Sass Selector inheritance
+
+            // man rounded box...
+            .roundedBoxMain {
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px
+            }
+
+            // use the main box elements
+            .roundedBox01 {
+                @extend .roundedBoxMain;
+                bgcolor: red;
+            }
+                <!-- <div class="roundedBox01"></div> -->
+
+            // use the main box elements
+            .roundedBox02 {
+                @extend .roundedBoxMain;
+                bgcolor: green;
+            }
+                <!-- <div class="roundedBox02"></div> -->
+    </pre>
+</body>
+</html>

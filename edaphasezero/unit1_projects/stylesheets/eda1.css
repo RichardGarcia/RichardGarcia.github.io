@@ -1,0 +1,46 @@
+
+/* Headings */
+
+h1 {
+	color: red;
+}
+
+h2 {
+	color: blue;
+}
+
+h3, h5 {
+	color: green;
+}
+
+h4 {
+	color: orange;
+}
+
+
+/* Paragraph */
+
+p strong {
+	color: red;
+}
+
+p em {
+	color: orange;
+}
+
+/* misc */
+
+
+/* classes */
+p.grayBG {
+	background-color: gray;
+}
+.redBG {
+	background-color: red;
+}
+
+/* id */
+
+#aquaBG {
+	background-color: aqua;
+}
